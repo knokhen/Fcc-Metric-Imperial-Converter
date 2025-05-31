@@ -52,5 +52,91 @@ suite("Unit Tests", function () {
       "convertHandler should correctly default to a numerical input of 1 when no numerical input is provided.",
     );
   });
+  test("Testing correctly reading each valid input unit.", () => {
+    assert.strictEqual(convertHandler.getUnit("3kg"), "kg", "correctly get kg");
+    assert.strictEqual(convertHandler.getUnit("3mi"), "mi", "correctly get mi");
+    assert.strictEqual(
+      convertHandler.getUnit("3lbs"),
+      "lbs",
+      "correctly get lbs",
+    );
+    assert.strictEqual(
+      convertHandler.getUnit("3gal"),
+      "gal",
+      "correctly get gal",
+    );
+    assert.strictEqual(convertHandler.getUnit("3km"), "km", "correctly get km");
+    assert.strictEqual(convertHandler.getUnit("3L"), "L", "correctly get L");
+  });
+  test("Testing correctly returning an error for an invalid input unit.", () => {
+    assert.strictEqual(
+      convertHandler.getUnit("3bug"),
+      "Invalid unit",
+      "convertHandler should correctly return an error for an invalid input unit.",
+    );
+  });
+  test("Testing returning the correct return unit for each valid input unit.", () => {
+    assert.strictEqual(
+      convertHandler.getReturnUnit("kg"),
+      "lbs",
+      "kg should return lbs",
+    );
+    assert.strictEqual(
+      convertHandler.getReturnUnit("lbs"),
+      "kg",
+      "lbs should return kg",
+    );
+    assert.strictEqual(
+      convertHandler.getReturnUnit("km"),
+      "mi",
+      "km should return mi",
+    );
+    assert.strictEqual(
+      convertHandler.getReturnUnit("mi"),
+      "km",
+      "mi should return km",
+    );
+    assert.strictEqual(
+      convertHandler.getReturnUnit("L"),
+      "gal",
+      "L should return gal",
+    );
+    assert.strictEqual(
+      convertHandler.getReturnUnit("gal"),
+      "L",
+      "gal should return L",
+    );
+  });
+  test("Testing correctly returning the spelled-out string unit for each valid input unit.", () => {
+    assert.strictEqual(
+      convertHandler.spellOutUnit("KG"),
+      "kg",
+      "KG should return kg",
+    );
+    assert.strictEqual(
+      convertHandler.spellOutUnit("l"),
+      "L",
+      "l should return L",
+    );
+    assert.strictEqual(
+      convertHandler.spellOutUnit("MI"),
+      "mi",
+      "MI should return mi",
+    );
+    assert.strictEqual(
+      convertHandler.spellOutUnit("LBS"),
+      "lbs",
+      "LBS should return lbs",
+    );
+    assert.strictEqual(
+      convertHandler.spellOutUnit("GAL"),
+      "gal",
+      "GAL should return gal",
+    );
+    assert.strictEqual(
+      convertHandler.spellOutUnit("KM"),
+      "km",
+      "KM should return km",
+    );
+  });
 });
-
