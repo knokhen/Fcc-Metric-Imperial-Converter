@@ -139,4 +139,46 @@ suite("Unit Tests", function () {
       "KM should return km",
     );
   });
+  test("Testing correctly converting gal to L.", () => {
+    assert.strictEqual(
+      convertHandler.convert(2, "gal"),
+      7.57082,
+      "convert 2gal to 7.57082L",
+    );
+  });
+  test("Testing correctly converting L to gal.", () => {
+    assert.strictEqual(
+      convertHandler.convert(2, "L"),
+      0.52834,
+      "convert 2L to 0.52834l",
+    );
+  });
+  test("Testing correctly converting mi to km.", () => {
+    assert.strictEqual(
+      convertHandler.convert(2, "mi"),
+      3.21868,
+      "convert 2mi to 3.21868m",
+    );
+  });
+  test("Testing correctly converting km to mi.", () => {
+    assert.strictEqual(
+      convertHandler.convert(2, "km"),
+      1.24274,
+      "convert 2km to 1.24274i",
+    );
+  });
+  test("Testing correctly converting lbs to kg.", () => {
+    assert.strictEqual(
+      convertHandler.convert(2, "lbs"),
+      0.90718,
+      "convert 2lbs to 0.90718g",
+    );
+  });
+  test("Testing correctly converting kg to lbs.", () => {
+    assert.strictEqual(
+      convertHandler.convert(2, "kg"),
+      4.40924,
+      "convert 2kg to 4.40924s",
+    );
+  });
 });

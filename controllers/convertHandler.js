@@ -66,13 +66,42 @@ function ConvertHandler() {
     const miToKm = 1.60934;
     let result;
 
+    switch (initUnit) {
+      case "gal":
+        result = Math.floor(initNum * galToL * 1e5) / 1e5;
+        break;
+      case "L":
+        result = Math.floor((initNum / galToL) * 1e5) / 1e5;
+        break;
+      case "lbs":
+        result = Math.floor(initNum * lbsToKg * 1e5) / 1e5;
+        break;
+      case "kg":
+        result = Math.floor((initNum / lbsToKg) * 1e5) / 1e5;
+        break;
+      case "mi":
+        result = Math.floor(initNum * miToKm * 1e5) / 1e5;
+        break;
+      case "km":
+        result = Math.floor((initNum / miToKm) * 1e5) / 1e5;
+        break;
+      default:
+        break;
+    }
     return result;
   };
 
   this.getString = function (initNum, initUnit, returnNum, returnUnit) {
-    let result;
+    const longUnit = {
+      km: "kilometers",
+      mi: "miles",
+      kg: "kilograms",
+      lbs: "pounds",
+      L: "liters",
+      gal: "gallons",
+    };
 
-    return result;
+    return `${initNum} ${longUnit[initUnit]} converts to ${returnNum} ${longUnit[returnUnit]}`;
   };
 }
 // const test = new ConvertHandler();
