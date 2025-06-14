@@ -4,18 +4,18 @@ function ConvertHandler() {
     let inputArr = input.split(/[A-z]+/);
     if (inputArr.length === 1) {
       return isNaN(inputArr[0]) || inputArr[0] === ""
-        ? "Invalid number"
+        ? "invalid number"
         : +inputArr[0];
     }
     if (inputArr.length === 2) {
       if (!isNaN(inputArr[1]) && inputArr[1] !== "") {
-        return "Invalid number";
+        return "invalid number";
       }
       if (inputArr[0] === "") {
         return 1;
       }
       if (inputArr[0].split("/").includes("")) {
-        return "Invalid number";
+        return "invalid number";
       }
       if (inputArr[0].split("/").length === 1) {
         return +inputArr[0];
@@ -25,7 +25,7 @@ function ConvertHandler() {
       }
     }
 
-    return "Invalid number";
+    return "invalid number";
   };
 
   this.getUnit = function (input) {
@@ -46,7 +46,7 @@ function ConvertHandler() {
       return this.spellOutUnit(inputArr[1]);
     }
 
-    return "Invalid unit";
+    return "invalid unit";
   };
 
   this.getReturnUnit = function (initUnit) {
@@ -105,7 +105,7 @@ function ConvertHandler() {
   };
 }
 // const test = new ConvertHandler();
-// console.log("2kg: " + test.getUnit("2kg"));
+// console.log("1mi: " + test.convert(1, "mi"));
 // console.log("2kg6: " + test.getUnit("2kg6"));
 // console.log("3.5mi: " + test.getUnit("3.5mi"));
 // console.log("3/5l: " + test.getUnit("3/5l"));

@@ -40,7 +40,7 @@ suite("Unit Tests", function () {
   test("Testing returning an error on a double-fraction", () => {
     assert.strictEqual(
       convertHandler.getNum("3/5/7kg"),
-      "Invalid number",
+      "invalid number",
       "convertHandler should correctly return an error on a double-fraction",
     );
   });
@@ -71,7 +71,7 @@ suite("Unit Tests", function () {
   test("Testing correctly returning an error for an invalid input unit.", () => {
     assert.strictEqual(
       convertHandler.getUnit("3bug"),
-      "Invalid unit",
+      "invalid unit",
       "convertHandler should correctly return an error for an invalid input unit.",
     );
   });
