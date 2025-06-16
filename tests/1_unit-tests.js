@@ -163,7 +163,7 @@ suite("Unit Tests", function () {
   test("Testing correctly converting km to mi.", () => {
     assert.strictEqual(
       convertHandler.convert(2, "km"),
-      1.24274,
+      1.24275,
       "convert 2km to 1.24274i",
     );
   });
@@ -177,7 +177,7 @@ suite("Unit Tests", function () {
   test("Testing correctly converting kg to lbs.", () => {
     assert.strictEqual(
       convertHandler.convert(2, "kg"),
-      4.40924,
+      4.40925,
       "convert 2kg to 4.40924s",
     );
   });

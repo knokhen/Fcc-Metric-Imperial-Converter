@@ -68,27 +68,27 @@ function ConvertHandler() {
 
     switch (initUnit) {
       case "gal":
-        result = Math.floor(initNum * galToL * 1e5) / 1e5;
+        result = initNum * galToL;
         break;
       case "L":
-        result = Math.floor((initNum / galToL) * 1e5) / 1e5;
+        result = initNum / galToL;
         break;
       case "lbs":
-        result = Math.floor(initNum * lbsToKg * 1e5) / 1e5;
+        result = initNum * lbsToKg;
         break;
       case "kg":
-        result = Math.floor((initNum / lbsToKg) * 1e5) / 1e5;
+        result = initNum / lbsToKg;
         break;
       case "mi":
-        result = Math.floor(initNum * miToKm * 1e5) / 1e5;
+        result = initNum * miToKm;
         break;
       case "km":
-        result = Math.floor((initNum / miToKm) * 1e5) / 1e5;
+        result = initNum / miToKm;
         break;
       default:
         break;
     }
-    return result;
+    return parseFloat(result.toFixed(5));
   };
 
   this.getString = function (initNum, initUnit, returnNum, returnUnit) {
